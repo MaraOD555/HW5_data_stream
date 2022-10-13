@@ -31,7 +31,7 @@ public class AvatarService {
     }
 
     public void uploadAvatar(Long studentId, MultipartFile avatarFile) throws IOException {// сохранение инфо на сервере
-            Student student = studentRepository.getById(studentId);
+            Student student = studentRepository.findById(studentId).orElse(null);
             Path filePath = Path.of(avatarsDir, student + "." + getExtensions(avatarFile.getOriginalFilename()));//это
         // путь к файлу имя будет присваиваться по student, через studentId, с расширением файла, которое было задано(оригинальное имя
         // которое пользователь в браузере задал)
