@@ -1,6 +1,7 @@
 package ru.hogwarts.school.HW5_data_stream.service;
 
 import org.springframework.stereotype.Service;
+import ru.hogwarts.school.HW5_data_stream.model.Faculty;
 import ru.hogwarts.school.HW5_data_stream.model.Student;
 import ru.hogwarts.school.HW5_data_stream.repository.StudentRepository;
 
@@ -33,5 +34,8 @@ public class StudentService {
         return studentRepository.findByAgeBetween(from, to);
     }
 
+    public Faculty findFaculty(long id) {
+        return studentRepository.findFaculty(id);
+    }
 }
 

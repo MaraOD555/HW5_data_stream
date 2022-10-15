@@ -2,6 +2,7 @@ package ru.hogwarts.school.HW5_data_stream.service;
 
 import org.springframework.stereotype.Service;
 import ru.hogwarts.school.HW5_data_stream.model.Faculty;
+import ru.hogwarts.school.HW5_data_stream.model.Student;
 import ru.hogwarts.school.HW5_data_stream.repository.FacultyRepository;
 
 import java.util.Collection;
@@ -40,5 +41,9 @@ public class FacultyService {
     }
     public Collection<Faculty> getAllFaculty() {
         return facultyRepository.findAll();
+    }
+
+    public Collection<Student> findStudent(long id) {
+        return facultyRepository.findStudent(id);
     }
 }
