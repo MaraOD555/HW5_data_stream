@@ -21,9 +21,7 @@ public class Student {
     }
 
     public Student() {
-
     }
-
 
     public Faculty getFaculty() {
         return faculty;
@@ -64,14 +62,17 @@ public class Student {
     public int hashCode() {
         return Objects.hash(getId(), getName(), getAge());
     }
-
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", faculty=" + faculty +
-                '}';
+    return "Student{" +
+            "id=" + id +'}';
+    //  @Override
+    //public String toString() {
+    //    return "Student{" +
+      //          "id=" + id +
+     //           ", name='" + name + '\'' +
+     //           ", age=" + age +
+     //           ", faculty=" + faculty +
+     //           '}';
     }
 }

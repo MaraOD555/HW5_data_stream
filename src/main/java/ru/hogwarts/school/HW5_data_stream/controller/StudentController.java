@@ -3,6 +3,7 @@ package ru.hogwarts.school.HW5_data_stream.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.hogwarts.school.HW5_data_stream.model.Faculty;
 import ru.hogwarts.school.HW5_data_stream.model.Student;
 import ru.hogwarts.school.HW5_data_stream.service.StudentService;
 
@@ -52,5 +53,14 @@ public class StudentController {
     public ResponseEntity<Collection<Student>> findByAgeBetween (@RequestParam int from,
                                                                  @RequestParam int to){
         return ResponseEntity.ok(studentService.findByAgeBetween(from, to));
+    }
+
+    @GetMapping("/{id}/faculty")
+    public ResponseEntity<Faculty> findStudentFaculty(@PathVariable Long id) {
+        Faculty faculty = studentService.findFaculty(id);
+        if (faculty == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(faculty);
     }
 }
